@@ -21,14 +21,14 @@ def listar():
 
 @app.route('/excluir')
 def excluir():
-    id = request.args['id']
-    sqc.delete(id)
+    id = int(request.args['id'])
+    sqc.delete(sqc.select_byId(id))
     return redirect('/listar')
 
 @app.route('/cadastrar')
 def cadastrar():
     if 'id' in request.args:
-        squad = sqc.select_byId(int(request.args['id']))
+        squad = sqc.select_byId(request.args['id'])
     else:
         squad = Squad(0,'','','')
     

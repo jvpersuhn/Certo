@@ -49,5 +49,8 @@ class SquadController:
         self.sc.update(squad.sgbd)
         self.sd.update(squad)
 
-    def delete(self,id):
-        self.sd.delete(id)
+    def delete(self,squad : Squad):
+        self.fc.delete(squad.id_linguagemFront)
+        self.bc.delete(squad.id_linguagemBack)
+        self.sc.delete(squad.id_sgbd)
+        self.sd.delete(squad.id)
