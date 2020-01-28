@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastrar</title>
+</head>
+<body>
+    <form action="/salvar" method="get">
+        <input type="hidden" name="id" id="id" value="{{ squad.id }}">
+        <label for="nome">Nome: </label>
+        <input type="text" name="nome" id="nome" value="{{ squad.nome }}">
+        <br>
+
+        <label for="desc">Descrição: </label>
+        <input type="text" name="desc" id="desc" value="{{squad.descricao}}">
+        <br>
+
+        <label for="numPessoas">Numero Pessoas: </label>
+        <input type="number" name="numPessoas" id="numPessoas" value="{{squad.numeroPessoas}}">
+        <br>
+
+        <input type="hidden" name="idF" id="idF" value="{{squad.linguagemFront.id}}">
+
+        <label for="nomeFront">Nome: </label>
+        <input type="text" name="nomeF" id="nomeF" value="{{squad.linguagemFront.nome}}">
+        <br>
+
+        <label for="descF">Descricao: </label>
+        <input type="text" name="descF" id="descF" value="{{squad.linguagemFront.descricao}}">
+        <br>
+
+        <label for="versaoF">Versao: </label>
+        <input type="text" name="versaoF" id="versaoF" value="{{squad.linguagemFront.versao}}">
+        <br>
+
+        <input type="hidden" name="idB" id="idB" value="{{squad.linguagemBack.id}}">
+        
+        <label for="nomeB">Nome: </label>
+        <input type="text" name="nomeB" id="nomeB" value="{{squad.linguagemBack.nome}}">
+        <br>
+
+        <label for="descB">Descricao: </label>
+        <input type="text" name="descB" id="descB" value="{{squad.linguagemBack.descricao}}">
+        <br>
+
+        <label for="versaoB">Versao: </label>
+        <input type="text" name="versaoB" id="versaoB" value="{{squad.linguagemBack.versao}}">
+        <br>
+
+        <input type="hidden" name="idS" id="idS" value="{{squad.sgbd.id}}">
+
+        <label for="nomeS">Nome: </label>
+        <input type="text" name="nomeS" id="nomeS" value="{{squad.sgbd.nome}}">
+        <br>
+
+        <label for="descS">Descricao: </label>
+        <input type="text" name="descS" id="descS" value="{{squad.sgbd.descricao}}">
+        <br>
+
+        <label for="versaoS">Versao: </label>
+        <input type="text" name="versaoS" id="versaoS" value="{{squad.sgbd.versao}}">
+        <br>
+        
+        <input type="submit" value="Salvar">
+    </form>
+</body>
+</html>

@@ -24,15 +24,15 @@
         <tbody>
             {% for i in lista %}
                 <tr>
-                    <td>{{ i.codigo }}</td>
+                    <td>{{ i.id }}</td>
                     <td>{{ i.nome }}</td>
                     <td>{{ i.descricao }}</td>
                     <td>{{ i.numeroPessoas }}</td>
                     <td>{{ i.linguagemFront.nome }}</td>
                     <td>{{ i.linguagemBack.nome }}</td>
                     <td>{{ i.sgbd.nome }}</td>
-                    <td><a href="/excluir?id={{ i.codigo }}">Excluir</a></td>
-                    <td><a href="/cadastrar"></a></td>
+                    <td><a href="/excluir?id={{ i.id }}">Excluir</a></td>
+                    <td><a href="/cadastrar?id={{ i.id }}">Alterar</a></td>
                 </tr>
             {% endfor %}
         </tbody>

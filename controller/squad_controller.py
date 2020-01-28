@@ -20,7 +20,7 @@ class SquadController:
                 squad.linguagemFront = self.fc.select_byId(i[4])
             if i[5] != None:
                 squad.id_linguagemBack = i[5]
-                squad.linguagemBack = self.bc.select_byId(i[4])
+                squad.linguagemBack = self.bc.select_byId(i[5])
             if i[6] != None:
                 squad.id_sgbd = i[6]
                 squad.sgbd = self.sc.select_byId(i[6])
@@ -32,15 +32,21 @@ class SquadController:
     def select_byId(self, id):
         s = self.sd.select_byId(id)
         squad = Squad(s[0],s[1],s[2],s[3])
-        squad.linguagemFront = self.fc.select_byId(s[4])
-        squad.linguagemBack = self.bc.select_byId(s[5])
-        squad.sgbd = self.sc.select_byId(s[6])
+        if s[4] != None:
+            squad.linguagemFront = self.fc.select_byId(s[4])
+        if s[5] != None:
+            squad.linguagemBack = self.bc.select_byId(s[5])
+        if s[6] != None:
+            squad.sgbd = self.sc.select_byId(s[6])
         return squad
 
     def insert(self, squad : Squad):
         self.sd.insert(squad)
     
     def update(self, squad : Squad):
+        self.fc.update(squad.linguagemFront)
+        self.bc.update(squad.linguagemBack)
+        self.sc.update(squad.sgbd)
         self.sd.update(squad)
 
     def delete(self,id):

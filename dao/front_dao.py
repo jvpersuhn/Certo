@@ -12,11 +12,11 @@ class FrontDao(Conexao):
         return self.cursor.fetchone()
         
     def update(self, front : FrontEnd):
-        self.cursor.execute(f"UPDATE 02_JM_FrontEnd  SET Nome = '{front.Nome}', Descricao = '{front.Descricao}', Versao = '{front.Versao}' WHERE ID = {front.id}")
+        self.cursor.execute(f"UPDATE 02_JM_FrontEnd  SET Nome = '{front.nome}', Descricao = '{front.descricao}', Versao = '{front.versao}' WHERE ID = {front.id}")
         self.conexao.commit()
 
     def insert(self, front: FrontEnd):
-        self.cursor.execute(f"INSERT INTO 02_JM_FrontEnd(Nome,Descricao,Versao) VALUES('{front.Nome}','{front.Descricao}','{front.Versao}')")
+        self.cursor.execute(f"INSERT INTO 02_JM_FrontEnd(Nome,Descricao,Versao) VALUES('{front.nome}','{front.descricao}','{front.versao}')")
         self.conexao.commit()
         return self.cursor.lastrowid
     
