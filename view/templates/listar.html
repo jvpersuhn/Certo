@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Listar</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Numero pessoas</th>
+                <th>Front-End</th>
+                <th>Back-End</th>
+                <th>SGBD</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in lista %}
+                <tr>
+                    <td>{{ i.codigo }}</td>
+                    <td>{{ i.nome }}</td>
+                    <td>{{ i.descricao }}</td>
+                    <td>{{ i.numeroPessoas }}</td>
+                    <td>{{ i.linguagemFront.nome }}</td>
+                    <td>{{ i.linguagemBack.nome }}</td>
+                    <td>{{ i.sgbd.nome }}</td>
+                    <td><a href="/excluir?id={{ i.codigo }}">Excluir</a></td>
+                    <td><a href="/cadastrar"></a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
